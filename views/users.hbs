@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background: #05406e;
+        color: #fff;
+    }
+    p[id="status"] { 
+        font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+   <h1>Admin:</h1>
+<button onclick="location.href='/'" type="button"> Main Page </button>
+
+<div> 
+   {{#each userEntries}} 
+      <p>UserID: {{this.userid}} Password: {{this.password}} Role: {{this.role}}</a></p> 
+   {{/each}} 
+</div>
+<br>
+<br>
+<form action="/delusers" method= "POST" >
+<button name="deleteBtn"> Delete Guests </button>
+</form>
+</body>
+</html>

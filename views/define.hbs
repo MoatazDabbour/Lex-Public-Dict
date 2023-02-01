@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+<style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background: #05406e;
+        color: #fff;
+    }
+    p[id="status"] { 
+        font-weight: 700;
+    }
+    div#defs { 
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-bottom: 1px solid #fafafa;
+    }
+  </style>
+</head>
+<body>
+   <h1>Definition Search:</h1>
+   
+<button onclick="location.href='/'" type="button"> Main Page </button>
+
+<div> 
+  <form action="/define" method= "POST" >
+  <label for="word"></label>
+  <input type="text" id="word" name="word">
+  <button name="ID" value='collegiate'>Define</button>
+
+</form> 
+</div>
+<p id="status"> {{status}} </p>
+
+<div id="defs"> 
+  {{#each definition}}
+  <p>- {{this.fl}} | {{this.hwi.hw}}: {{this.shortdef}} </p>
+  {{/each}}
+</div>
+</body>
+</html>

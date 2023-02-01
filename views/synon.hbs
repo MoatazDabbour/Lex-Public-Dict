@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background: #05406e;
+        color: #fff;
+    }
+    p[id="status"] { 
+        font-weight: 700;
+    }
+    div#defs { 
+        padding: 5px 10px;
+        border-radius: 5px;
+        border-bottom: 1px solid #fafafa;
+    }
+  </style>
+</head>
+<body>
+   <h1>Synonyms Search:</h1>
+<button onclick="location.href='/'" type="button"> Main Page </button>
+
+<div> 
+  <form action="/getsyn" method= "POST" >
+  <label for="word">Word:</label>
+  <input type="text" id="word" name="word">
+  <button name="ID" value='thesaurus'>Find</button>
+
+</form> 
+</div>
+<p> {{status}} </p>
+
+<div> 
+  {{#each definition}}
+  <p>- {{this}} </p>
+  {{/each}}
+</div>
+</body>
+</html>

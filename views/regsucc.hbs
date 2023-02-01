@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+    <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background: #05406e;
+        color: #fff;
+    }
+    p[id="status"] { 
+        font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+   <h1>{{status}}</h1>
+<div> 
+  <form action="/register" method= "POST" >
+  <label for="user">Username:</label><br>
+  <input type="text" id="user" name="user"><br>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd">
+  <button name="ID" value='reg'>Register</button>
+</form> 
+</div>
+<p>Login Here</p>
+<form action="/" method= "GET" >
+<button>Login</button>
+</form> 
+{{!-- <a href="/">Login</a> --}}
+</body>
+</html>

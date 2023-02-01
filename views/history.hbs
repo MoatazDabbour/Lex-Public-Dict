@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title> {{title}} </title>
+
+  <style>
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    button {
+        border-radius: 10px;
+        padding: 10px;
+        background: #05406e;
+        color: #fff;
+    }
+    p[id="status"] { 
+        font-weight: 700;
+
+    }
+
+  </style>
+
+</head>
+<body>
+   <h1>My History:</h1>
+<button onclick="location.href='/'" type="button"> Main Page </button>
+
+<div> 
+   {{#each search}} 
+      <p>- {{this.search}} </a></p> 
+   {{/each}} 
+</div>
+<br>
+<br>
+
+<form action="/delete" method= "POST" >
+<button name="deleteBtn"> Delete History </button>
+</form>
+
+</body>
+</html>
